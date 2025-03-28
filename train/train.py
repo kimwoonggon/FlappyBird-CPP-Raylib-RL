@@ -82,7 +82,7 @@ def get_args():
     parser.add_argument("--kl_weight", type=float, default=0.1, help="KL divergence weight")
     parser.add_argument("--num_episodes", type=int, default=10000, help="Number of episodes to train")
     parser.add_argument("--saved_path", type=str, default="trained_models")
-    parser.add_argument("--model_checkpoint", type=str, default="flappy_bird_latest.pth", help="Checkpoint file to load (set to None for no loading)")
+    parser.add_argument("--model_checkpoint", type=str, default="flappy_bird_lat.pth", help="Checkpoint file to load (set to None for no loading)")
     parser.add_argument("--headless", action="store_true", help="Run in headless mode")
     parser.add_argument("--reward_scale", type=float, default=1.0, help="Reward scaling factor")
     parser.add_argument("--use_cuda", type=bool, default=True, help="Use CUDA if available")
@@ -339,7 +339,6 @@ def train(opt):
                 normalized_returns = trajectory_returns - trajectory_mean
             else:
                 normalized_returns = (trajectory_returns - trajectory_mean) / (trajectory_std + 1e-8)
-            
             normalized_returns = torch.clamp(normalized_returns, -10.0, 10.0)
             
             inner_group_advantage_list.append(normalized_returns)
@@ -357,8 +356,8 @@ def train(opt):
                 log_pi_a = dist.log_prob(a_batch.squeeze()).unsqueeze(1)
                 log_prob_a = torch.log(prob_batch + 1e-8)
                 ratio = torch.exp(log_pi_a - log_prob_a)
+                print("ratio: ", ratio)
                 
-                ratio = torch.clamp(ratio, 0.0, 10.0)
                 
                 surr1 = ratio * normalized_returns.unsqueeze(1)
                 surr2 = torch.clamp(ratio, 1 - opt.eps_clip, 1 + opt.eps_clip) * normalized_returns.unsqueeze(1)
