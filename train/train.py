@@ -73,7 +73,7 @@ def get_args():
     parser.add_argument("--image_size", type=int, default=84, help="Common width and height for all images")
     parser.add_argument("--batch_size", type=int, default=32, help="Number of samples per mini-batch")
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1, help="Number of steps to accumulate gradients")
-    parser.add_argument("--lr", type=float, default=1e-5, help="Learning rate")
+    parser.add_argument("--lr", type=float, default=1e-4, help="Learning rate")
     parser.add_argument("--gamma", type=float, default=0.99, help="Discount factor")
     parser.add_argument("--eps_clip", type=float, default=0.1, help="Clip parameter")
     parser.add_argument("--K_epoch", type=int, default=3, help="Number of policy update epochs")
