@@ -264,7 +264,7 @@ def train(opt):
         len_total_trajectories = 0
         for i in range(opt.num_rollouts):
             trajectory, reward, time_reward, terminal, steps = collect_trajectory(
-                main_game_state, model, device, opt, action_counts, 
+                main_game_state, ref_model, device, opt, action_counts, 
                 episode_action_counts if i == 0 else None
             )
             len_total_trajectories += len(trajectory)
