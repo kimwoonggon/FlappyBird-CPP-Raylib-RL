@@ -147,7 +147,7 @@ def compute_returns(rewards, gamma):
         R = r + gamma * R
         returns.insert(0, R)
     #return returns
-    return returns.reverse()
+    return returns[::-1]
 
 def train(opt):
     torch.autograd.set_detect_anomaly(True)
