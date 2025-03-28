@@ -357,7 +357,6 @@ def train(opt):
                 log_pi_a = dist.log_prob(a_batch.squeeze()).unsqueeze(1)
                 log_prob_a = torch.log(prob_batch + 1e-8)
                 ratio = torch.exp(log_pi_a - log_prob_a)
-                print("ratio: ", ratio)
                 
                 
                 surr1 = ratio * normalized_returns.unsqueeze(1)
