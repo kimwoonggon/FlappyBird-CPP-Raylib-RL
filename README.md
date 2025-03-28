@@ -13,16 +13,11 @@ To train the RL Model, GRPO method is adapted instead of PPO or DQN.
 
 ## Dependencies
 
-- [Raylib](https://www.raylib.com/) - A simple and easy-to-use library for videogame programming
-- [ONNX Runtime](https://onnxruntime.ai/) - Cross-platform inference accelerator
+- [Raylib](https://www.raylib.com/)
+- [ONNX Runtime](https://onnxruntime.ai/)
 - C++11 or later
 
 ## Installation
-
-### Prerequisites
-
-This project is configured for macOS using Homebrew.
-
 ### Installing Dependencies
 
 You can install all required dependencies using the provided Makefile:
@@ -83,7 +78,7 @@ make run
 
 ## How It Works
 
-The AI uses a reinforcement learning model trained to play Flappy Bird optimally. The game converts the current frame into a format the neural network can understand, and the model outputs probabilities for two actions: "do nothing" or "flap."
+The AI uses a reinforcement learning model trained to play Flappy Bird. The game converts the current frame into a format the neural network can understand, and the model outputs probabilities for two actions: "do nothing" or "flap."
 
 ### Model Training Methodology
 
@@ -93,10 +88,10 @@ The model was trained based on the Group Relative Policy Optimization (GRPO) app
 
 The AI agent uses a Convolutional Neural Network (CNN) that processes raw pixel data from the game screen. This approach allows the AI to learn directly from visual input, similar to how a human player would perceive the game:
 
-- Game frames are captured, preprocessed to 84x84 grayscale images, and stacked to provide temporal information
+- Game frames are captured, preprocessed to 84x84 grayscale four images, and stacked to provide temporal information
 - These frames pass through a series of convolutional layers to extract spatial features like pipe positions and bird location
 - The CNN architecture automatically learns relevant visual features without requiring hand-crafted state representations
-- The network outputs action probabilities based directly on pixel patterns it has learned during training
+- The network outputs action probability distribution based directly on pixel patterns it has learned during training
 
 #### GRPO Training Method is adapted instead of DQN or PPO
 
@@ -106,7 +101,7 @@ This implementation adapts the GRPO methodology by:
 - Averaging advantages across these rollouts to get more stable policy updates
 
 When AI mode is enabled, you can see:
-- The processed frames used as input to the neural network
+- The processed 4 frames used as input to the neural network
 - Real-time probabilities for each action
 - Visual indicator when the AI decides to flap
 
