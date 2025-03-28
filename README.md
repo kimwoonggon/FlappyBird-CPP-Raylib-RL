@@ -110,6 +110,12 @@ When AI mode is enabled, you can see:
 - `assets/` - Game sprites and audio files
 - `trained_models/` - Pre-trained ONNX model for AI control
 
+## Credits
+This project is inspired by the original Flappy Bird game created by Dong Nguyen
+and by https://github.com/vietnh1009/Flappy-bird-deep-Q-learning-pytorch 
+
+
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
