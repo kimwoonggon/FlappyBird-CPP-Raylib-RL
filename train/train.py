@@ -147,6 +147,7 @@ def compute_returns(rewards, gamma):
         R = r + gamma * R
         returns.insert(0, R)
     return returns
+    # [::-1] 하면 끝단의 점수가 앞으로 오기 때문에 안맞는 듯
     #return returns[::-1]
 
 def train(opt):
