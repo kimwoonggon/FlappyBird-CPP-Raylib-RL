@@ -1,4 +1,4 @@
-# FlappyBird-CPP-RAYLIB-ReinforcementLearning
+# FlappyBird-CPP-RAYLIB-RL-GRPO
 
 A Flappy Bird game implementation with AI reinforcement learning capabilities, built with C++ and Raylib.  
 To train the RL Model, GRPO method is partially adapted instead of PPO or DQN.
