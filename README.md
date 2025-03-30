@@ -11,11 +11,18 @@ To train the RL Model, GRPO method is partially adapted instead of PPO or DQN.
 - Pixel-perfect collision detection
 - Smooth bird animation and physics
 
+
 ## Dependencies
 
 - [Raylib](https://www.raylib.com/)
 - [ONNX Runtime](https://onnxruntime.ai/)
 - C++14 or later
+
+### Controls
+
+- **Space** - Start game / Make the bird flap
+- **A** - Toggle AI control mode (when available)
+- **Esc** - Exit the game
 
 ## Installation
 ### Installing Dependencies
@@ -70,11 +77,7 @@ make run
 ./flappy_bird
 ```
 
-### Controls
 
-- **Space** - Start game / Make the bird flap
-- **A** - Toggle AI control mode (when available)
-- **Esc** - Exit the game
 
 ## How It Works
 
