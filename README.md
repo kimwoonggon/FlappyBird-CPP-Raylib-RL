@@ -18,6 +18,8 @@ To train the RL Model, GRPO method is partially adapted instead of PPO or DQN.
 - [ONNX Runtime](https://onnxruntime.ai/)
 - C++14 or later
 
+## GamePlay
+![설명](./flappybird-rl-grpo.gif)
 ### Controls
 
 - **Space** - Start game / Make the bird flap
