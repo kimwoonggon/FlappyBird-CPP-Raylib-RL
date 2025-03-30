@@ -15,7 +15,7 @@ To train the RL Model, GRPO method is partially adapted instead of PPO or DQN.
 
 - [Raylib](https://www.raylib.com/)
 - [ONNX Runtime](https://onnxruntime.ai/)
-- C++11 or later
+- C++14 or later
 
 ## Installation
 ### Installing Dependencies
